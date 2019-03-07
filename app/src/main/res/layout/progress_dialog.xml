@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/progress_layout"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--simple progress dialog-->
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:indicatorName="BallPulseIndicator"
+        android:visibility="gone"
+        />
+    <!-- Advance progress dialog
+
+    style="@style/AVLoadingIndicatorView"// or AVLoadingIndicatorView.Large or AVLoadingIndicatorView.Small
+    -->
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/AVLoadingIndicatorView"
+        android:visibility="visible"
+        app:indicatorName="BallSpinFadeLoaderIndicator"
+        app:indicatorColor="@color/colorPrimaryDark"
+    />
+
+    <!--
+        To see indecator Style : https://github.com/81813780/AVLoadingIndicatorView
+
+        IndecatorName :
+
+        Row 1
+
+            BallPulseIndicator
+            BallGridPulseIndicator
+            BallClipRotateIndicator
+            BallClipRotatePulseIndicator
+        Row 2
+
+            SquareSpinIndicator
+            BallClipRotateMultipleIndicator
+            BallPulseRiseIndicator
+            BallRotateIndicator
+        Row 3
+
+            CubeTransitionIndicator
+            BallZigZagIndicator
+            BallZigZagDeflectIndicator
+            BallTrianglePathIndicator
+        Row 4
+
+            BallScaleIndicator
+            LineScaleIndicator
+            LineScalePartyIndicator
+            BallScaleMultipleIndicator
+        Row 5
+
+            BallPulseSyncIndicator
+            BallBeatIndicator
+            LineScalePulseOutIndicator
+            LineScalePulseOutRapidIndicator
+        Row 6
+
+            BallScaleRippleIndicator
+            BallScaleRippleMultipleIndicator
+            BallSpinFadeLoaderIndicator
+            LineSpinFadeLoaderIndicator
+        Row 7
+
+            TriangleSkewSpinIndicator
+            PacmanIndicator
+            BallGridBeatIndicator
+            SemiCircleSpinIndicator
+        Row 8
+
+            com.wang.avi.sample.MyCustomIndicator
+    -->
+
+</RelativeLayout>
