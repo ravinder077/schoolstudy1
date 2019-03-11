@@ -1,9 +1,7 @@
 package com.tuespotsolutions.schoolstudy;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.MailTo;
@@ -14,7 +12,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -31,7 +28,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-public class HomeFragment extends Fragment {
+public class TestFragment extends Fragment {
 
     WebView webView2;
     private com.wang.avi.AVLoadingIndicatorView avi;
@@ -42,13 +39,13 @@ public class HomeFragment extends Fragment {
     private LinearLayout no_internet_layout,error_internet_layout;
     private Button retry_btn,exit_btn;
 
-    public static String URL;
+    public static String URL ;
     public static String title = "Subject List";
     public static String webPage_Must_contain = "tuespotsolutions.com";
     public static String Downloadable_Type = ".docx"; // if more types then use in condition with || operator like ' ||url.endsWith(".jpg") ' in  'shouldOverrideUrlLoading' method
     public static String HIDE_ELEMENT_BY_ID="nav";
 
-    private ProgressDialog dialog;
+
 
     private Handler handler1 = new Handler(){
         @Override
@@ -81,9 +78,7 @@ public class HomeFragment extends Fragment {
         //like if the class is HomeFragment it should have R.layout.home_fragment
         //if it is DashboardFragment it should have R.layout.fragment_dashboard
 
-        URL=getActivity().getString(R.string.lessionurl);
-        dialog = new ProgressDialog(getActivity());
-        dialog.setMessage("Please wait");
+        URL=getActivity().getString(R.string.testurl);
         ((AppCompatActivity)getActivity()).getSupportActionBar().show();
         View view = inflater.inflate(R.layout.webviewmain, container, false);
         webView2 = view.findViewById(R.id.webview_main);
@@ -226,7 +221,6 @@ public class HomeFragment extends Fragment {
 
                 public void onPageFinished(WebView view, String url) {
                     stopAnim();
-                    dialog.dismiss();
                     progress_layout.setVisibility(View.GONE);
                     System.err.println("Page Finished");
                     //webView.loadUrl("javascript:MyApp.resize(document.body.getBoundingClientRect().height)");
